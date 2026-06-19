@@ -1,0 +1,23 @@
+# data (NOT redistributable, multi-GB) -- place locally, see README
+RHB_train/
+track2_testdata/
+data/
+
+# model checkpoints (large) -- regenerate via training, see README
+ckpt_*/
+*.pth
+
+# submission CSVs (regenerated)
+*.csv
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
