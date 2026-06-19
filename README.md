@@ -51,18 +51,7 @@ This produces `best.pth`.
 python inference.py --ckpts best.pth --out submission_raw.csv
 ```
 
-**3. Post-process**
-```bash
-python postprocess.py --in submission_raw.csv --out submission.csv
-```
-
-The final stage applies a compact subject-level refinement procedure to improve the consistency of the estimated heartbeat trajectory before submission.
-
 **Evaluate on the held-out split (optional)**
 ```bash
 python evaluate.py --ckpt best.pth --folds-path folds/fold_heldtrial.pkl --splits val_files
 ```
-
-## Contributors
-
-- liuytian
