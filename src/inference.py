@@ -1,11 +1,5 @@
 """Inference -> submission CSV.
 
-Per 10s test segment, for each model: quality bin-search over find_range +-3
-(keep the bin whose predicted PPG has the sharpest in-band PSD peak), read HR by
-periodogram peak. Across the seed ensemble: median HR (robust to per-seed
-disaster segments), max quality. Finally same-subject quality fallback: replace
-low-quality segments by the subject's quality-weighted good-segment mean.
-
   python inference.py --ckpts ckpt_seed11/best.pth ckpt_seed22/best.pth ... \
       --out submission_ensemble.csv --q-fallback 0.10
 """
