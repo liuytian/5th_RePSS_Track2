@@ -1,7 +1,6 @@
-# Radar-based Heart Rate Estimation
+# Radar-based Heartbeat Signal Extraction
 
-Contactless heart-rate estimation from FMCW-radar IQ signals. Given a 10 s radar
-range-time matrix per segment, the model predicts the heart rate (bpm).
+Contactless heartbeat signal extraction from FMCW radar signals through the analysis of subtle heartbeat-induced chest motions.
 
 ## Environment
 
