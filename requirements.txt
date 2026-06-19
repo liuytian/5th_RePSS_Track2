@@ -1,3 +1,8 @@
-torch==2.6.0
-numpy==1.26.4
-scipy==1.13.1
+# Core deep-learning / scientific stack.
+# Pinned to the versions used for the final results; >= lower bounds are safe.
+# Python >= 3.10 recommended. For CUDA builds of torch, install the matching
+# wheel from https://pytorch.org (e.g. torch==2.6.0+cu126).
+
+torch>=2.2,<2.7
+numpy>=1.24,<2.0
+scipy>=1.10,<1.14
