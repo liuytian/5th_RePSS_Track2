@@ -1,25 +1,5 @@
 """Disaster-segment correction via same-subject HR consistency.
 
-The competition test set is 50 subjects x 6 segments. A subject's heart rate is
-highly stable across its 6 segments (measured test std ~1.8 bpm). So a segment
-whose predicted HR deviates strongly from its OWN subject's median, while the
-subject's other segments are tight, is almost certainly a "disaster segment"
-(wrong range-bin picked). We pull such segments back to the subject median.
-
-This is the final post-processing step that took the submission from the
-ensemble baseline to the best score. Verified online, each correction lowered
-RMSE (e.g. 54_1/3, 22_1/6, 25_1/4).
-
-Rule (tuned on the leaderboard):
-  for each segment s of subject u:
-    others = u's other 5 segments
-    if |HR_s - median(others)| >= DEV_THR and std(others) < STD_THR:
-        HR_s <- median(others)
-
-DEV_THR is deliberately conservative: small deviations (<~6 bpm) are often real
-physiological variation, not disasters -- correcting those HURTS. Only the
-isolated-spike segments (large deviation + tight neighbours) are safe to fix.
-
 Usage:
   python postprocess_disaster.py --in submission_ensemble.csv \
       --out submission_final.csv --dev-thr 8 --std-thr 2.5
