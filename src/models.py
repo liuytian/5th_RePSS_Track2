@@ -1,3 +1,8 @@
+"""1-D convolutional encoder/decoder for radar IQ -> PPG waveform.
+
+The encoder maps a multi-bin IQ window (10 channels = real/imag x 5 range bins)
+to a 512-d latent; the decoder reconstructs a 1-channel PPG-like waveform.
+"""
 from typing import Tuple
 import torch
 

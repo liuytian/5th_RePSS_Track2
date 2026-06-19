@@ -1,5 +1,5 @@
+"""Heart-rate error metrics (RMSE / MAE / MAX / Pearson)."""
 import numpy as np
-from numpy.ma.core import absolute
 from scipy import stats
 
 
